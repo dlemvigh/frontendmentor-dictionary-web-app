@@ -1,5 +1,8 @@
-.font-switcher {
+.font-switcher-container {
     position: relative;
+}
+
+.font-switcher {
     border: none;
     background: none;
     display: flex;
