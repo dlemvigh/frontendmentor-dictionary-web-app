@@ -1,0 +1,56 @@
+.font-switcher {
+    position: relative;
+    border: none;
+    background: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    cursor: default;
+}
+
+.option {
+    border: none;
+    background: none;
+    white-space: nowrap;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.option:hover {
+    color: var(--color-purple);
+}
+
+.font-mono {
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-family-monospace);
+}
+
+.font-serif {
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-family-serif);
+}
+
+.font-sans-serif {
+    cursor: pointer;
+    font-weight: bold;
+    font-family: var(--font-family-sans-serif);
+}
