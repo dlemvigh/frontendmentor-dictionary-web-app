@@ -1,10 +1,14 @@
+import { useDarkMode } from "../../context/DarkModeContext"
 import classes from "./DarkModeSwitcher.module.css"
 
 export function DarkModeSwitcher() {
+    const { darkMode, toggleDarkMode } = useDarkMode()
+
+
     return (
         <div className={classes["dark-mode-switcher"]}>
             <label className={classes["dark-mode-label"]}>
-                <input type="checkbox" name="dark-mode" className={classes["dark-mode-input"]} />
+                <input type="checkbox" name="dark-mode" className={classes["dark-mode-input"]} checked={darkMode === "dark"} onChange={toggleDarkMode} />
                 <div className={classes["dark-mode-knob"]}></div>
             </label>
             
