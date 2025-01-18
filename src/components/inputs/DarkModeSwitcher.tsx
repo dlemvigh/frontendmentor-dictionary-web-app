@@ -1,9 +1,9 @@
 import { useCallback } from "react"
-import { useDarkMode } from "../../context/DarkModeContext"
+import { useUIContext } from "../../context/UIContext"
 import classes from "./DarkModeSwitcher.module.css"
 
 export function DarkModeSwitcher() {
-    const { darkMode, toggleDarkMode } = useDarkMode()
+    const { darkMode, toggleDarkMode } = useUIContext()
 
     const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLLabelElement>) => {
         if (e.key === "Enter" || e.key === " ") {

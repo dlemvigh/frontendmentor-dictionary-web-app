@@ -1,10 +1,11 @@
 import { FocusEvent, useCallback, useState } from "react";
 import classes from "./FontSwitcher.module.css"
+import { useUIContext } from "../../context/UIContext";
 
 type Font = "sans-serif" | "serif" | "mono";
 
 export function FontSwitcher() {
-    const [font, setFont] = useState<Font>("sans-serif");
+    const { font, setFont } = useUIContext();
     const [isOpen, setIsOpen] = useState(true);
     
     const toggleOpen = useCallback(() => {

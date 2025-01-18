@@ -1,13 +1,13 @@
 import { Header } from './components/Header'
-import { DarkModeProvider } from './context/DarkModeContext'
+import { UIContextProvider } from './context/UIContext'
 
 function App() {
 
   return (
     <>
-      <DarkModeProvider>
+      <UIContextProvider>
         <Header />
-      </DarkModeProvider>
+      </UIContextProvider>
     </>
   )
 }
