@@ -106,7 +106,7 @@ export const DATA: DataType = [
     }
   ]
 
-const data2: DataType = [
+export const data2: DataType = [
   {
     "word": "knife",
     "phonetic": "/naɪf/",
@@ -192,7 +192,7 @@ const data2: DataType = [
   }
 ]
 
-const data3: DataType = [
+export const data3: DataType = [
   {
     "word": "symbol",
     "phonetic": "/ˈsɪmbəl/",
@@ -286,7 +286,7 @@ const data3: DataType = [
   }
 ]
 
-const data4: DataType = [
+export const data4: DataType = [
   {
     "word": "key",
     "phonetic": "/kiː/",
