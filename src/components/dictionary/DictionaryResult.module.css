@@ -1,0 +1,31 @@
+.word-section {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr auto;
+    gap: .5rem;
+}
+
+.word {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.phonetic {
+    color: var(--color-purple);
+}
+
+.pronounciation {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    place-self: center;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.icon {
+    height: 3rem;
+    width: 3rem;
+}

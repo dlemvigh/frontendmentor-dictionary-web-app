@@ -42,11 +42,30 @@
   --font-family-monospace: 'Inconsolata', monospace;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-background: var(--color-black);
+    --color-background-alt: var(--color-grey-100);
+    --color-text: var(--color-white);
+    --color-highlight: var(--color-purple);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --color-background: var(--color-white);
+    --color-background-alt: var(--color-grey-900);
+    --color-text: var(--color-black);
+    --color-highlight: hsla(0, 0%, 0%, 10%);
+  }
+}
+
 body.dark-mode {
   --color-background: var(--color-black);
   --color-background-alt: var(--color-grey-100);
   --color-text: var(--color-white);
   --color-highlight: var(--color-purple);
+  transition: background-color 0.3s ease-in-out;
 }
 
 body.light-mode {
@@ -54,6 +73,7 @@ body.light-mode {
   --color-background-alt: var(--color-grey-900);
   --color-text: var(--color-black);
   --color-highlight: hsla(0, 0%, 0%, 10%);
+  transition: background-color 0.3s ease-in-out;
 }
 
 body.font-serif {
@@ -77,16 +97,11 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family-base);
-
-  transition: background-color 0.3s ease-in-out;
 }
 
 
 #root {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
 }
 
 @media screen and (max-width: var(--breakpoint-mobile)) {
