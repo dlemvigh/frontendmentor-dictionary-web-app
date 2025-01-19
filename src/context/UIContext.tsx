@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useMemo, useState } from "react"
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react"
 import { getPerferredColorScheme } from "../util/dark-mode"
 
 export type DarkMode = "light" | "dark"
@@ -21,6 +21,16 @@ export function UIContextProvider({ children }: { children: React.ReactNode }) {
     const toggleDarkMode = useCallback(() => {
         setDarkMode((prev) => (prev === "dark" ? "light" : "dark"))
     }, [])
+
+    useEffect(() => {
+        document.body.classList.remove("dark-mode", "light-mode")
+        document.body.classList.add(`${darkMode}-mode`)
+    }, [darkMode])
+
+    useEffect(() => {
+        document.body.classList.remove("font-serif", "font-sans-serif", "font-mono")
+        document.body.classList.add(`font-${font}`)
+    }, [font])
 
     const value = useMemo(() => ({ 
         darkMode, 
