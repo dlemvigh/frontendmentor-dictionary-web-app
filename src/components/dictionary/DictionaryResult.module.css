@@ -8,6 +8,7 @@
 .word {
     font-size: 2rem;
     font-weight: 800;
+    margin: 0;
 }
 
 .phonetic {
@@ -28,4 +29,81 @@
 .icon {
     height: 3rem;
     width: 3rem;
+}
+
+.meaning-section + .meaning-section {
+    margin-top: 2rem;
+}
+
+.meaning-part-of-speech {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.meaning-title {
+    color: #757575;
+    margin-top: 2rem;
+}
+
+
+.meaning-line {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #979797;
+}
+
+.definition-list {
+    padding-left: 1rem;
+}
+
+.definition::marker {
+    color: var(--color-purple)
+}
+.definition {
+    padding-left: 1.25rem;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.definition + .definition {
+    margin-top: .75rem;
+}
+
+.example {
+    display: inline-block;
+    margin-top: .75rem;
+    color: #757575;   
+}
+
+.synonyms-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.synonyms-title {
+    color: #757575;
+}
+
+.synonyms {
+    color: var(--color-purple);
+    font-weight: 600;;
+}
+
+.sources-title {
+    color: #757575;
+    text-decoration: underline;
+}
+
+.source {
+    display: block;
+    color: inherit;
+    margin-top: .5rem;   
+}
+
+.source::after {
+    content: url('/images/icon-new-window.svg');
+    margin-left: 1rem;
 }
