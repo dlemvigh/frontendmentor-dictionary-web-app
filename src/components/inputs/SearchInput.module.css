@@ -1,4 +1,4 @@
-.search-container {
+.container {
     display: flex;    
     background-color: var(--color-background-alt);
     border-radius: 1rem;
@@ -7,11 +7,14 @@
     height: 3rem;
     box-sizing: border-box;
 }
-.search-container:focus-within {
+.container:focus-within {
     outline: 1px solid var(--color-purple);
 }
+.container:has([aria-invalid=true]) {
+    outline: 1px solid var(--color-red);
+}
 
-.search-input {
+.input {
     border: none;
     flex-grow: 1;
     background-color: transparent;
@@ -22,6 +25,12 @@
     color: inherit;
     padding: 0;
 }
-.search-input:focus {
+
+.input:focus {
     outline: none;
+}
+
+.error {
+    color: var(--color-red);
+    font-size: 20px;
 }

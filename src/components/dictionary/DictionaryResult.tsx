@@ -1,11 +1,16 @@
-import { DataType } from "../DATA";
+import { WordType } from "../../hooks/DATA";
 import classes from "./DictionaryResult.module.css"
 
 interface DictionaryResultProps {
-    data: DataType
+    data: WordType
 }
 
 export function DictionaryResult({ data }: DictionaryResultProps) {
+
+    if (!data[0]) {
+        return null
+    }
+
     const { word, phonetic, meanings, sourceUrls } = data[0]
 
     return (

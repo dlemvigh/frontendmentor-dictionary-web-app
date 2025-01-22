@@ -1,29 +1,40 @@
-import { useCallback } from 'react'
+import { useState } from 'react'
 import { SearchInput } from './inputs/SearchInput'
 
-import { DATA } from './DATA'
 import { DictionaryResult } from './dictionary/DictionaryResult'
+import { useForm } from 'react-hook-form'
+import { useDictionaryApi } from '../hooks/useDictionaryApi'
+import { DictionaryLookupError } from './dictionary/DictionaryLookupError'
+
+type FormValues = {
+    search: string
+}
+
+const DEFAULT_VALUE = ""
 
 export function Main() {
-    const dictionaryResult = DATA
+    const [search, setSearch] = useState(DEFAULT_VALUE)
 
-    const handleSubmit = useCallback(async (e: React.FormEvent) => {
-        e.preventDefault()
-        // TODO get search text from submit event
-        // TODO fetch data from API
-        // TODO set data to state
-    }, [])
+    const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({
+        defaultValues: { search: DEFAULT_VALUE }
+    })
+    const { data, error, isSuccess, isError } = useDictionaryApi({ word: search })
+
+    const onSubmit = handleSubmit((data: FormValues) => {
+        setSearch(data.search)
+    })
 
     return (
         <main>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={onSubmit}>
                 <SearchInput
-                    name="search"
-                    // value={value}
-                    // onChange={(e) => setValue(e.target.value)}
+                    {...register('search', { required: "Whoops, can't be empty..." })}
                     placeholder="Search for any word..."
+                    error={errors.search?.message}
                 />
-                <DictionaryResult data={dictionaryResult} />
+
+                {isSuccess && <DictionaryResult data={data} />}
+                {isError && <DictionaryLookupError error={error} />}    
             </form>
 
         </main>
