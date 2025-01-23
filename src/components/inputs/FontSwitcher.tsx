@@ -27,7 +27,7 @@ export function FontSwitcher() {
         <div className={classes["font-switcher-container"]} onBlur={onBlurOutside}>
             <button className={classes["font-switcher"]} onClick={toggleOpen}>
                 <FontOption font={font} />
-                <img src="/images/icon-arrow-down.svg" className={`${classes.chevron}`} />
+                <img src={import.meta.env.BASE_URL + "/images/icon-arrow-down.svg"} className={`${classes.chevron}`} />
             </button>
             {isOpen && (
                 <div className={classes["dropdown"]}>

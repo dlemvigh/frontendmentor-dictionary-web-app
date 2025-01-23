@@ -9,7 +9,7 @@ export function SearchInput(props: SearchInputProps) {
         <>
             <div className={classes.container}>
                 <input className={classes.input} {...props} aria-invalid={!!props.error} />
-                <img src="/images/icon-search.svg" className={classes.icon} />
+                <img src={import.meta.env.BASE_URL + "/images/icon-search.svg"} className={classes.icon} />
             </div>
             {props.error && <p className={classes.error}>{props.error}</p>}
         </>
