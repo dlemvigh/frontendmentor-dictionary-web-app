@@ -39,7 +39,7 @@ jobs:
 
       - name: Upload artifact for deployment
         uses: actions/upload-pages-artifact@v3
-        id: deployment
+        id: upload
         with:
           path: dist  # Path to the build output directory
 
@@ -54,5 +54,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2  # Verified action by GitHub
-        # with:
-        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
